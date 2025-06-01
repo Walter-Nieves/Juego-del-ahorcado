@@ -1,0 +1,17 @@
+.App{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: red; */
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media  screen and (orientation:portrait) {
+  .App{
+    flex-direction: column;
+  }
+  
+}

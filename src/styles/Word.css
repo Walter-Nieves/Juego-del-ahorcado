@@ -1,0 +1,26 @@
+.ul {
+    display: flex;
+    gap: 15px;
+}
+
+.li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.li.espacio {
+     width: 1rem; 
+}
+
+.celda {
+    display: flex;
+    border-bottom: 2px solid black;
+}
+
+.visible {
+    color: black;
+}
+
+.oculta {
+    color: transparent;
+}
