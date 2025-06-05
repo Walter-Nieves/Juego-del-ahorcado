@@ -7,6 +7,7 @@ import Focos  from './components/tests/Focos.jsx'
 import Mayusculainador from "./components/tests/Mayusculainador.jsx"
 import Formulario from './components/tests/Formulario.jsx'
 import App from "./components/App.jsx"
+import PartidoPuntos from '/src/components/tests/PartidoPuntos.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')).render(
     {/* <Focos/> */}
     {/* <Mayusculainador/> */}
     {/* <Formulario/> */}
+    {/* <PartidoPuntos/> */}
     <App/>
   </StrictMode>,
 )

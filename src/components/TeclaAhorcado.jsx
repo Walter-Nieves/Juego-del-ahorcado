@@ -5,7 +5,7 @@ const estilo = {
 
     centrar: { display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" },
 
-    colores: { backgroundColor: "blue", border: "2px solid white", borderRadius: "5px", color: "white" },
+    colores: { backgroundColor: "black", border: "2px solid white", borderRadius: "5px", color: "white" },
 
 }
 
@@ -15,13 +15,20 @@ const estilo = {
 function Tecla({ children, tecleo }) {
     // creamos una referencia a un boton
     const refBoton = useRef(null);
+
     const manejadorHover = () => {
-        if (refBoton.current.style.backgroundColor == "darkblue") return;
-        refBoton.current.style.backgroundColor = "red"
+        if (refBoton.current.style.backgroundColor == "darkblue" ) return;
+        refBoton.current.style.backgroundColor = "white"
+        refBoton.current.style.color = "black"
+        refBoton.current.style.border = "2px solid black"
     }
     const manejadorExit = () => {
-        if (refBoton.current.style.backgroundColor == "darkblue") return;
-        refBoton.current.style.backgroundColor = "blue"
+        if (refBoton.current.style.backgroundColor == "darkblue" ) return;
+        refBoton.current.style.backgroundColor = "black"
+        refBoton.current.style.color = "white"
+        refBoton.current.style.border = "2px solid white"
+
+
     }
 
     //funcion que llamaremos dentro del componente
@@ -31,6 +38,7 @@ function Tecla({ children, tecleo }) {
         //desactivamos el boton The setAttribute method in React is used to directly modify attributes of DOM elements
         refBoton.current.setAttribute("disabled", true);
         refBoton.current.style.backgroundColor = "darkblue"
+         refBoton.current.style.color = "white"
 
     }
 

@@ -1,0 +1,79 @@
+.Config {
+    display: flex;
+    position: fixed;
+    right: .5rem;
+    top: 0.5rem;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.Config img {
+    width: 2rem;
+    aspect-ratio: 1;
+    /* con filter:invert se cambia el color de los iconos de bootstrap de negro a blanco y viceversa */
+    /* filter: invert(); */
+    border-radius: 50%;
+    padding: .25rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.Config img:hover {
+    background-color: #222;
+    transform: rotate(-45deg);
+    filter: invert();
+    transition: 1s;
+
+}
+
+.Config div {
+    background-color: #ddd;
+    padding: .5rem;
+    display: flex;
+}
+
+.Config .case-type {
+    position: relative;
+    display: flex;
+    width: 170%;
+    height: 2.5rem;
+    align-items: center;
+    font-size: 1rem;
+    transition: .5s;
+    border-radius: 10px;
+
+}
+
+.Config .case-type ul {
+    list-style: none;
+    position: absolute;
+    right: .25rem;
+    display: flex;
+    flex-direction: column;
+    top: .5rem;
+    overflow: hidden;
+    height: calc(100% - 1rem);
+   
+}
+
+.Config .case-type ul li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, white, gray);
+    border: .1rem solid #ddd;
+    border-radius: .2rem;
+    cursor: pointer;
+    padding: .1rem .2rem;
+
+}
+.Config .case-type ul li:hover{
+    color: #555;
+     background: linear-gradient(to top, white, #ddd);
+}
+.Config .case-type ul li.selected{
+    color: white;
+    background: linear-gradient(to bottom gray,whitesmoke);
+}
