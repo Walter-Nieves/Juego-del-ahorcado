@@ -1,5 +1,6 @@
 //traemos el reemplazo de id
-import { useRef } from "react";
+import { useContext, useRef, useEffect } from "react";
+import { ConfigContext } from "../contexts/ConfigContext";
 
 const estilo = {
 
@@ -13,17 +14,30 @@ const estilo = {
 
 //creamos un componente que recibe tecleo y debe tener hijos
 function Tecla({ children, tecleo }) {
+
+    const { letras, setLetras, palabra, bancoHandler } = useContext(ConfigContext);
+
+    useEffect(() => {
+        if (!letras) {
+            reiniciarTecla();
+            refBoton.current.style.backgroundColor = "black"
+            refBoton.current.style.color = "white"
+            refBoton.current.style.border = "2px solid white"
+        }
+    }, [letras]);
+
+
     // creamos una referencia a un boton
     const refBoton = useRef(null);
 
     const manejadorHover = () => {
-        if (refBoton.current.style.backgroundColor == "darkblue" ) return;
+        if (refBoton.current.style.backgroundColor == "darkblue") return;
         refBoton.current.style.backgroundColor = "white"
         refBoton.current.style.color = "black"
         refBoton.current.style.border = "2px solid black"
     }
     const manejadorExit = () => {
-        if (refBoton.current.style.backgroundColor == "darkblue" ) return;
+        if (refBoton.current.style.backgroundColor == "darkblue") return;
         refBoton.current.style.backgroundColor = "black"
         refBoton.current.style.color = "white"
         refBoton.current.style.border = "2px solid white"
@@ -34,12 +48,20 @@ function Tecla({ children, tecleo }) {
     //funcion que llamaremos dentro del componente
     const manejadorBoton = () => {
         //llamamos al prop tecleo y le mandamos como parametros los hijos
-        tecleo(children);
+        // tecleo(children);
+        setLetras(letras + children)
+        if (!palabra.toLowerCase().includes(String(children).toLowerCase())) {
+            bancoHandler();
+        }
         //desactivamos el boton The setAttribute method in React is used to directly modify attributes of DOM elements
         refBoton.current.setAttribute("disabled", true);
         refBoton.current.style.backgroundColor = "darkblue"
-         refBoton.current.style.color = "white"
+        refBoton.current.style.color = "white"
 
+    }
+
+    const reiniciarTecla = () => {
+        refBoton.current.removeAttribute("disabled");
     }
 
     return (

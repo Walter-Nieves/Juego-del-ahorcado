@@ -7,6 +7,10 @@
     align-items: center;
     padding: 1rem;
     flex-direction: column;
+    font-size: x-large;
+    font-weight: bolder;
+
+  
 
 }
 
@@ -18,15 +22,19 @@
     display: flex;
     align-items: center;
     position: relative;
+     
+   
 }
 
 .personaje .foto {
     width: 100%;
     aspect-ratio: 1;
     background-image: url("/imagenes/person.png");
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: 145%;
+   filter: drop-shadow( 10px,20px,15px red);
 }
 
 .banco {

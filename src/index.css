@@ -1,18 +1,28 @@
-*{
+@font-face {
+  font-family: "Gotico medieval";
+  src: url("/Fonts/Seagram tfb.ttf");
+}
+
+@font-face {
+  font-family: Ruritania;
+  src: url("/public/Fonts/Ruritania.ttf");
+}
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-html{
+html {
   font-size: 20px;
 }
 
 
 
 @media screen and (max-width:300px) {
-    html{
-        font-size: 15px;
-    }
-    
+  html {
+    font-size: 15px;
+  }
+
 }

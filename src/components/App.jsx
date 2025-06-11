@@ -3,27 +3,29 @@ import "../styles/App.css"
 import Ahorcado from "./Ahorcado.jsx"
 import WordContainer from "./WordContainer.jsx"
 import Config from "./config.jsx"
+import Menu from "./Menu.jsx"
 
 
 
 
 function App() {
 
-  const [caseConfig,setCaseConfig]= useState("");
+  const [caseConfig, setCaseConfig] = useState("");
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(caseConfig);
 
-  },[caseConfig]
+  }, [caseConfig]
 
   );
 
   return (
-    <div  className="App">
-        <Ahorcado/>
-       <WordContainer  configApp={caseConfig}/>
-       <Config mensajero={setCaseConfig} />
-        
+    <div className="App">
+      <Menu />
+      <Ahorcado />
+      <WordContainer configApp={caseConfig} />
+      <Config mensajero={setCaseConfig} />
+
     </div>
   )
 }

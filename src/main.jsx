@@ -3,11 +3,12 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 // import Contador from './components/tests/Contador.jsx'
 import Teclado from './components/tests/Teclado.jsx'
-import Focos  from './components/tests/Focos.jsx'
+import Focos from './components/tests/Focos.jsx'
 import Mayusculainador from "./components/tests/Mayusculainador.jsx"
 import Formulario from './components/tests/Formulario.jsx'
 import App from "./components/App.jsx"
 import PartidoPuntos from '/src/components/tests/PartidoPuntos.jsx'
+import ConfigContextComponent from './contexts/ConfigContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -17,6 +18,11 @@ createRoot(document.getElementById('root')).render(
     {/* <Mayusculainador/> */}
     {/* <Formulario/> */}
     {/* <PartidoPuntos/> */}
-    <App/>
+
+    <ConfigContextComponent>
+
+      <App />
+    </ConfigContextComponent>
+
   </StrictMode>,
 )

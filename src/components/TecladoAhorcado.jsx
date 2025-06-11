@@ -20,7 +20,7 @@ function Teclado (){
     return(
         <div className="teclado">
             {teclas.map((letra,index)=>{
-                return <TeclaAhorcado tecleo={texthandler} key={index}>{letra}</TeclaAhorcado>
+                return <TeclaAhorcado  key={index}>{letra}</TeclaAhorcado>
             })}
         </div>
     )

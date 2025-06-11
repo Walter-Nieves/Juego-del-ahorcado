@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../styles/Word.css"
+import { ConfigContext } from "../contexts/ConfigContext";
 
 // const letras = "elpa";
 // const palabra = "mas cansado que el putas";
@@ -9,10 +10,12 @@ import "../styles/Word.css"
 
 function Word({ configWordContainer }) {
 
+    const {palabra,letras}=useContext(ConfigContext);
+
     const [juego, setJuego] = useState([]);
     const espacioInvisible = "\u00A0";
-    const [letras, setLetras] = useState("NOTUERILDQBA");
-    const [palabra, setPalabra] = useState("No Todo Lo Que Brilla Es Oro")
+   
+   
 
     useEffect(() => {
         const estructura = palabra.split("").map((letra) => {
@@ -23,7 +26,7 @@ function Word({ configWordContainer }) {
         });
         setJuego(estructura);
         console.log(configWordContainer);
-    }, [configWordContainer]);
+    }, [configWordContainer, letras,palabra]);
 
     return (
         <ul className="ul" style={{
