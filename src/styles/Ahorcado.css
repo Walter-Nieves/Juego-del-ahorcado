@@ -1,5 +1,4 @@
 .Ahorcado {
-    /* background-color: green; */
     width: 40%;
     height: 100%;
     display: flex;
@@ -9,32 +8,30 @@
     flex-direction: column;
     font-size: x-large;
     font-weight: bolder;
-
-  
-
 }
 
 .personaje {
-
     width: 90%;
     aspect-ratio: 1;
-    /* background-color: blue; */
+    background-image: url('/public/imagenes/happy-halloween.gif');
+    background-size: cover;
     display: flex;
     align-items: center;
     position: relative;
-     
-   
+    justify-content: center;
+    border-radius: 10px;
+    padding: 5px;
+    filter: drop-shadow(10px 10px 8px gray);
 }
 
 .personaje .foto {
     width: 100%;
     aspect-ratio: 1;
     background-image: url("/imagenes/person.png");
-    
+    position: relative;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 145%;
-   filter: drop-shadow( 10px,20px,15px red);
 }
 
 .banco {
@@ -43,7 +40,6 @@
     bottom: -9%;
     right: 60%;
     transition: right 0.3 ease;
-
 }
 
 @media screen and (orientation:portrait) {
@@ -54,15 +50,16 @@
 
     .personaje {
         width: unset;
-      height: 100%;
-      aspect-ratio: 1;
+        height: 100%;
+        aspect-ratio: 1;
     }
+
     @media screen and (max-width:300px) {
-        .personaje{
+        .personaje {
             width: 100%;
             height: unset;
         }
-        
+
     }
 
 }
